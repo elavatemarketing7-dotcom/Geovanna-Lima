@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { QUIZ_QUESTIONS, EXPERT_DATA } from '../constants';
-import FloatingExpert from './FloatingExpert';
-import { QuizResponse } from '../types';
+import { QUIZ_QUESTIONS, EXPERT_DATA } from '../constants.tsx';
+import FloatingExpert from './FloatingExpert.tsx';
+import { QuizResponse } from '../types.ts';
 
 interface QuizProps {
   onComplete: (responses: QuizResponse[]) => void;
@@ -37,7 +37,6 @@ const Quiz: React.FC<QuizProps> = ({ onComplete, onExit }) => {
       className="fixed inset-0 z-[100] flex items-center justify-center p-3 md:p-6 bg-stone-900/60 backdrop-blur-sm"
     >
       <div className="relative w-full max-w-md bg-white rounded-[32px] p-5 md:p-8 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
-        {/* Background Subtle Logo/Text */}
         <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-[0.02]">
           <span className="text-6xl md:text-8xl font-bold uppercase rotate-45 text-stone-900">{EXPERT_DATA.name}</span>
         </div>

@@ -1,11 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { AppState, QuizResponse } from './types';
-import { EXPERT_DATA } from './constants';
-import Quiz from './components/Quiz';
-import ResultPage from './components/ResultPage';
-import MainLanding from './components/MainLanding';
+import { AppState, QuizResponse } from './types.ts';
+import { EXPERT_DATA } from './constants.tsx';
+import Quiz from './components/Quiz.tsx';
+import ResultPage from './components/ResultPage.tsx';
+import MainLanding from './components/MainLanding.tsx';
 import { Sparkles, ArrowRight, MessageCircle } from 'lucide-react';
 
 const App: React.FC = () => {
@@ -132,7 +132,6 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col font-sans relative overflow-hidden">
-      {/* Background Main Site for Context if needed */}
       {(state === AppState.QUIZ || state === AppState.ANALYZING || state === AppState.RESULT) && (
         <div className="fixed inset-0 z-0 opacity-40 grayscale blur-sm pointer-events-none">
           <MainLanding />

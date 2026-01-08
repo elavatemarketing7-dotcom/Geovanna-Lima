@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { EXPERT_DATA, GALLERY_DATA, HEART_METHOD_DATA, TESTIMONIALS } from '../constants';
+import { EXPERT_DATA, GALLERY_DATA, HEART_METHOD_DATA, TESTIMONIALS } from '../constants.tsx';
 import { Check, ArrowRight, Play, Instagram, MapPin, MessageCircle, Heart } from 'lucide-react';
 
 const MainLanding: React.FC = () => {
@@ -132,7 +132,7 @@ const MainLanding: React.FC = () => {
         </div>
       </section>
 
-      {/* RESULTADOS REAIS (TÉCNICOS) - AGORA EM CIMA */}
+      {/* RESULTADOS REAIS (TÉCNICOS) */}
       <section className="py-24 bg-stone-50 overflow-hidden">
         <div className="container mx-auto px-6 text-center mb-16">
             <h2 className="text-4xl serif mb-4">Portfólio Clínico</h2>
@@ -178,7 +178,7 @@ const MainLanding: React.FC = () => {
         </div>
       </section>
 
-      {/* ESTRATÉGICO: HARMONIZAÇÃO DE CORAÇÃO 💚 (SEÇÃO EXCLUSIVA) - AGORA ABAIXO */}
+      {/* ESTRATÉGICO: HARMONIZAÇÃO DE CORAÇÃO 💚 */}
       <section className="py-24 bg-stone-100 relative overflow-hidden">
         <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#b49b71]/10 rounded-full blur-3xl" />
         <div className="container mx-auto px-6">
@@ -239,9 +239,6 @@ const MainLanding: React.FC = () => {
       <section className="py-20 bg-[#b49b71] text-white">
         <div className="container mx-auto px-6 text-center">
             <h2 className="text-3xl md:text-4xl serif mb-6">Ainda com dúvidas?</h2>
-            <p className="text-white/80 mb-10 max-w-2xl mx-auto">
-                Não se preocupe em saber qual procedimento fazer agora. Minha avaliação serve justamente para entendermos suas queixas e traçarmos o melhor plano.
-            </p>
             <button 
                 onClick={handleCTA}
                 className="px-10 py-5 bg-white text-[#b49b71] font-bold rounded-full shadow-xl hover:scale-105 transition-all"
@@ -276,7 +273,7 @@ const MainLanding: React.FC = () => {
         </div>
       </section>
 
-      {/* MAIS PROVAS (TESTIMONIALS) */}
+      {/* MAIS PROVAS */}
       <section className="py-24 bg-stone-50">
         <div className="container mx-auto px-6">
              <div className="text-center mb-16">
@@ -292,7 +289,7 @@ const MainLanding: React.FC = () => {
         </div>
       </section>
 
-      {/* LOCATION SECTION */}
+      {/* LOCATION */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
             <div className="flex flex-col md:flex-row gap-12 items-center">
@@ -304,13 +301,6 @@ const MainLanding: React.FC = () => {
                             <div>
                                 <h4 className="font-bold text-stone-900">Endereço</h4>
                                 <p className="text-stone-500">{EXPERT_DATA.address}</p>
-                            </div>
-                        </div>
-                        <div className="flex items-start gap-4">
-                            <Instagram className="text-[#b49b71] mt-1 shrink-0" />
-                            <div>
-                                <h4 className="font-bold text-stone-900">Instagram</h4>
-                                <a href={EXPERT_DATA.instagram} className="text-[#b49b71] hover:underline">@dra_geovannalima</a>
                             </div>
                         </div>
                     </div>
@@ -330,45 +320,20 @@ const MainLanding: React.FC = () => {
       </section>
 
       {/* CTA FINAL */}
-      <section className="py-24 bg-stone-900 text-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 grayscale pointer-events-none">
-            <img src={EXPERT_DATA.expertAlt2} className="w-full h-full object-cover" alt="bg" />
-        </div>
-        <div className="container mx-auto px-6 text-center relative z-10">
-            <h2 className="text-4xl md:text-5xl serif mb-8 leading-tight">
-                Dê o primeiro passo para a sua <br className="hidden md:block" /> melhor versão hoje mesmo.
-            </h2>
-            <p className="text-stone-400 mb-12 max-w-xl mx-auto">
-                Estou ansiosa para te conhecer e desenharmos juntas o seu novo sorriso e harmonia facial.
-            </p>
-            <div className="space-y-6">
-                <button 
-                    onClick={handleCTA}
-                    className="px-12 py-6 bg-[#b49b71] text-white font-bold rounded-full shadow-[0_20px_40px_-15px_rgba(180,155,113,0.6)] hover:scale-105 active:scale-95 transition-all text-lg flex items-center justify-center gap-3 mx-auto"
-                >
-                    <MessageCircle size={24} />
-                    QUERO AGENDAR MINHA CONSULTA
-                </button>
-                <p className="text-stone-500 font-medium">Restam poucas vagas para este mês.</p>
-            </div>
-        </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="py-12 bg-white border-t border-stone-100">
-        <div className="container mx-auto px-6 flex flex-col items-center">
-            <div className="signature text-4xl text-[#b49b71] mb-4">
-                {EXPERT_DATA.name}
-            </div>
-            <p className="text-sm text-stone-400 mb-6 font-medium tracking-widest uppercase">
-                {EXPERT_DATA.profession} | {EXPERT_DATA.address}
-            </p>
-            <div className="flex gap-6 mb-8">
-                <a href={EXPERT_DATA.instagram} className="text-stone-400 hover:text-[#b49b71] transition-all"><Instagram size={20} /></a>
-                <a href={EXPERT_DATA.whatsapp} className="text-stone-400 hover:text-[#b49b71] transition-all"><MessageCircle size={20} /></a>
-            </div>
-            <div className="text-[10px] text-stone-300 uppercase tracking-widest">
-                © {new Date().getFullYear()} {EXPERT_DATA.name}. Todos os direitos reservados.
+      <footer className="py-24 bg-stone-900 text-white text-center">
+        <div className="container mx-auto px-6">
+            <div className="signature text-5xl text-[#b49b71] mb-6">{EXPERT_DATA.name}</div>
+            <h2 className="text-3xl serif mb-12">Pronta para sua melhor versão?</h2>
+            <button 
+                onClick={handleCTA}
+                className="px-12 py-6 bg-[#b49b71] text-white font-bold rounded-full shadow-2xl hover:scale-105 transition-all text-lg flex items-center justify-center gap-3 mx-auto"
+            >
+                <MessageCircle size={24} />
+                AGENDAR CONSULTA AGORA
+            </button>
+            <div className="mt-16 flex justify-center gap-6">
+                <a href={EXPERT_DATA.instagram} className="text-stone-500 hover:text-white transition-colors">Instagram</a>
+                <a href={EXPERT_DATA.whatsapp} className="text-stone-500 hover:text-white transition-colors">WhatsApp</a>
             </div>
         </div>
       </footer>
