@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { EXPERT_DATA, GALLERY_DATA, HEART_METHOD_DATA, TESTIMONIALS } from '../constants.tsx';
-import { Check, ArrowRight, Play, Instagram, MapPin, MessageCircle, Heart } from 'lucide-react';
+import { Check, ArrowRight, Instagram, MapPin, MessageCircle, Heart } from 'lucide-react';
 
 const MainLanding: React.FC = () => {
   const [activeTab, setActiveTab] = useState('Todas');
@@ -77,11 +77,6 @@ const MainLanding: React.FC = () => {
                         loop
                         playsInline
                     />
-                    <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-transparent transition-all pointer-events-none">
-                        <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border border-white/30">
-                            <Play size={24} className="text-white fill-white" />
-                        </div>
-                    </div>
                 </div>
                 <div className="w-full md:w-2/5 space-y-6">
                     <h2 className="text-3xl serif leading-tight">A arte da transformação natural</h2>
